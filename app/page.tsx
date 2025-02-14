@@ -4,9 +4,11 @@ import Sections from "./components/Sections";
 
 export default function Home() {
   return (
-    <main className="">
-      <Navbar />
-      <Sections/>
-    </main>
+    <>
+      <div className="container w-[90%] mx-auto">
+        <Navbar />
+        <Sections />
+      </div>
+    </>
   );
 }
