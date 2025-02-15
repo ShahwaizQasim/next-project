@@ -32,7 +32,7 @@ export default function Navbar() {
             <div className="hidden md:flex gap-2 items-center">
               <Link href={"/signup"}>
                 <button className='w-[80px] h-[35px] text-sm bg-green-500 shadow-md shadow-black/35 hover:bg-green-600 hover:text-white transition-all duration-500'
-                  >Sign up</button>
+                >Sign up</button>
               </Link>
               <Link href={"/login"}>
                 <button className='w-[80px] h-[35px] text-sm border-2 border-black hover:bg-black hover:text-white transition-all duration-500'>Login</button>
