@@ -24,17 +24,18 @@ export default function Navbar() {
 
             <div className="hidden md:flex items-center text-[14px] space-x-6">
               <Link href="/" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/" && "border-b-2 border-green-500"}`}>Home</Link>
-              <Link href="/about-us" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/about-us" && "border-b-2 border-green-500"}`}>About US</Link>
-              <Link href="/contact-us" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/contact-us" && "border-b-2 border-green-500"}`}>CONTACT US</Link>
-              <Link href="/client-login" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/client-login" && "border-b-2 border-green-500"}`}>Client Login</Link>
+              <Link href="/about-us" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/about-us" && "border-b-2 border-green-500"}`}>About Us</Link>
+              <Link href="/contact-us" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/contact-us" && "border-b-2 border-green-500"}`}>Contact Us</Link>
+              <Link href="/client-login" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/client-login" && "border-b-2 border-green-500"}`}>Service</Link>
             </div>
 
             <div className="hidden md:flex gap-2 items-center">
               <Link href={"/signup"}>
-                <button className='w-[80px] h-[35px] bg-green-500 shadow-md shadow-black/35 hover:bg-green-600 hover:text-white transition-all duration-500' >Sign up</button>
+                <button className='w-[80px] h-[35px] text-sm bg-green-500 shadow-md shadow-black/35 hover:bg-green-600 hover:text-white transition-all duration-500'
+                  >Sign up</button>
               </Link>
               <Link href={"/login"}>
-                <button className='w-[80px] h-[35px] border-2 border-black hover:bg-black hover:text-white transition-all duration-500'>Login</button>
+                <button className='w-[80px] h-[35px] text-sm border-2 border-black hover:bg-black hover:text-white transition-all duration-500'>Login</button>
               </Link>
             </div>
 
