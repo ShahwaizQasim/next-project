@@ -32,6 +32,7 @@ export default function Navbar() {
               <Link href="/contact-us" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/contact-us" && "border-b-2 border-green-500"}`}>Contact Us</Link>
               <Link href="/client-login" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/client-login" && "border-b-2 border-green-500"}`}>Service</Link>
             </div>
+
             {status === "authenticated" ? (
               <>
                 <Link href={"/dashboard"}>
@@ -51,6 +52,7 @@ export default function Navbar() {
                 </div>
               </>
             )}
+
 
 
             <div className="md:hidden">
