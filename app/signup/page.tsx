@@ -7,7 +7,6 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { BsGithub } from 'react-icons/bs';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import axios from 'axios';
 
 const Signup = () => {
@@ -38,6 +37,8 @@ const Signup = () => {
         onSubmit: async (values) => {
             try {
                 const response = await axios.post('/api/signup', values);
+                console.log(response);
+                
                 if (response.status === 200) {
                     console.log('User signed up successfully:', response.data);
                 }
@@ -196,7 +197,6 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };
