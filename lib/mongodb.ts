@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
-const connectDB = async (): Promise<void> => {
-  const mongoUri: string = ""
+const Db_Connection = async (): Promise<void> => {
+  const mongoUri: string = "mongodb+srv://adilmalik01:adilmalik@cluster0.sidm8e9.mongodb.net/AI_PAPER_CHECKER?retryWrites=true&w=majority&appName=Cluster0"
 
   if (mongoose.connections[0].readyState) {
     console.log('MongoDB already connected - Skipping reconnection')
@@ -14,4 +14,4 @@ const connectDB = async (): Promise<void> => {
   }
 }
 
-export default connectDB
+export default Db_Connection;

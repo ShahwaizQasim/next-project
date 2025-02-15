@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { BsGithub } from 'react-icons/bs';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import axios from 'axios';
 
 const Signup = () => {
     const formik = useFormik({
@@ -34,8 +35,15 @@ const Signup = () => {
                 .required('Password is required')
                 .min(8, 'Password should be at least 8 characters'),
         }),
-        onSubmit: (values) => {
-            console.log(values);
+        onSubmit: async (values) => {
+            try {
+                const response = await axios.post('/api/signup', values);
+                if (response.status === 200) {
+                    console.log('User signed up successfully:', response.data);
+                }
+            } catch (error: any) {
+                console.log(error)
+            }
         },
     });
 
