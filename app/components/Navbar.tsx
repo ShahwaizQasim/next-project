@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation'
+import { useSession } from "next-auth/react";
+import { UserCircle } from 'lucide-react';
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { status } = useSession();
 
   return (
     <>
@@ -29,15 +33,27 @@ export default function Navbar() {
               <Link href="/client-login" className={`text-gray-600 hover:text-gray-900 ${usePathname() === "/client-login" && "border-b-2 border-green-500"}`}>Service</Link>
             </div>
 
-            <div className="hidden md:flex gap-2 items-center">
-              <Link href={"/signup"}>
-                <button className='w-[80px] h-[35px] text-sm bg-green-500 shadow-md shadow-black/35 hover:bg-green-600 hover:text-white transition-all duration-500'
-                >Sign up</button>
-              </Link>
-              <Link href={"/login"}>
-                <button className='w-[80px] h-[35px] text-sm border-2 border-black hover:bg-black hover:text-white transition-all duration-500'>Login</button>
-              </Link>
-            </div>
+            {status === "authenticated" ? (
+              <>
+                <Link href={"/dashboard"}>
+                  <UserCircle className="h-7 w-7" />
+                  <span className="sr-only">Profile</span></Link>
+              </>
+            ) : (
+              <>
+                <div className="hidden md:flex gap-2 items-center">
+                  <Link href={"/signup"}>
+                    <button className='w-[80px] h-[35px] text-sm bg-green-500 shadow-md shadow-black/35 hover:bg-green-600 hover:text-white transition-all duration-500'
+                  >Sign up</button>
+                  </Link>
+                  <Link href={"/login"}>
+                    <button className='w-[80px] h-[35px] text-sm border-2 border-black hover:bg-black hover:text-white transition-all duration-500'>Login</button>
+                  </Link>
+                </div>
+              </>
+            )}
+
+
 
             <div className="md:hidden">
               <button onClick={() => setOpen(!open)} className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">

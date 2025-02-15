@@ -4,16 +4,17 @@ import bcrypt from 'bcrypt'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
-    if (req.method !== 'POST') {
-        return NextResponse.json({ message: 'Method not allowed' })
-    }
+
 
     const { fullName, phoneNumber, email, password } = await req.json()
+    console.log('Received data:', { fullName, phoneNumber, email, password });
 
 
     if (!email || !password || !fullName || !phoneNumber) {
         return NextResponse.json({ message: 'Incomplete input data' })
     }
+
+    console.log(fullName, phoneNumber, email, password)
 
     try {
         await Db_Connection()
@@ -42,12 +43,9 @@ export async function POST(req: NextRequest) {
         console.log('New user:', newUser)
         await newUser.save()
 
-        return NextResponse.json(
-            { message: 'User created successfully' },
-            { status: 200 }
-        )
+        return NextResponse.json({ message: 'User created successfully' }, { status: 200 })
     } catch (error) {
         console.error(error)
-        return NextResponse.json({ message: 'Server error' })
+        return NextResponse.json({ message: 'Server error' }, { status: 500 })
     }
 }
