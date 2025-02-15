@@ -49,7 +49,6 @@ const Signup = () => {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <Navbar />
             <div className="flex min-h-[calc(100vh-64px)]">
                 <div className="hidden md:flex w-1/2 bg-teal-600 p-8 flex-col justify-between relative overflow-hidden">
                     <div className="relative z-10">
@@ -196,7 +195,6 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };

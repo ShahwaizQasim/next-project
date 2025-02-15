@@ -13,7 +13,6 @@ export function LoginPage() {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <Navbar />
             <div className="flex min-h-[calc(100vh-64px)]">
                 <div className="hidden md:flex w-1/2 bg-teal-700 p-8 flex-col justify-between relative overflow-hidden">
                     <div className="relative z-10">
@@ -121,7 +120,6 @@ export function LoginPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

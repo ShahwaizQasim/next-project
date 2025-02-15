@@ -1,6 +1,8 @@
-import React from 'react'
+import { NextPage } from 'next'
 
-function Footer() {
+interface Props { }
+
+const Footer: NextPage<Props> = ({ }) => {
     return (
         <>
             <div className="container mx-auto px-14">
@@ -179,9 +181,7 @@ function Footer() {
                     </span>
                 </div>
             </div>
-
         </>
-
     )
 }
 
