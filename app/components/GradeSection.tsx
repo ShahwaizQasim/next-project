@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 
 interface Props { }
 
-const Sections: NextPage<Props> = ({ }) => {
+const GradeSections: NextPage<Props> = ({ }) => {
     return <>
         
         <section className=" body-font GradeSection">
@@ -30,4 +30,4 @@ const Sections: NextPage<Props> = ({ }) => {
     </>
 }
 
-export default Sections
+export default GradeSections
