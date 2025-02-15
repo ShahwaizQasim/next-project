@@ -3,40 +3,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation'
-import { LoginPopup } from './LoginPopup';
-import SignUpPopup from './SignupPopup';
 
 export default function Navbar() {
-  const [loginOpen, setLoginOpen] = useState(false);
   const [open, setOpen] = useState(false);
-  const [signUpOpen, setSignUpOpen] = useState(false);
-
-  const handleOpenLogin = () => {
-    setLoginOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const handleCloseLogin = () => {
-    setLoginOpen(false);
-    document.body.style.overflow = 'auto';
-  };
-
-  const handleOpenSignUp = () => {
-    setSignUpOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const handleCloseSignUp = () => {
-    setSignUpOpen(false);
-    document.body.style.overflow = 'auto';
-  };
 
   return (
     <>
-      <LoginPopup open={loginOpen} onClose={handleCloseLogin} />
-      <SignUpPopup open={signUpOpen} onClose={handleCloseSignUp} />
 
-      <header className="bg-white shadow-sm border-b border-black/25 z-10">
+
+      <header className="bg-[#F2F5F6] shadow-sm border-b border-black/25 z-10">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
@@ -55,8 +30,12 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:flex gap-2 items-center">
-              <button className='w-[80px] h-[35px] bg-green-500 shadow-md shadow-black/35 hover:bg-green-600 hover:text-white transition-all duration-500' onClick={handleOpenSignUp}>Sign up</button>
-              <button onClick={handleOpenLogin} className='w-[80px] h-[35px] border-2 border-black hover:bg-black hover:text-white transition-all duration-500'>Login</button>
+              <Link href={"/signup"}>
+                <button className='w-[80px] h-[35px] bg-green-500 shadow-md shadow-black/35 hover:bg-green-600 hover:text-white transition-all duration-500' >Sign up</button>
+              </Link>
+              <Link href={"/login"}>
+                <button className='w-[80px] h-[35px] border-2 border-black hover:bg-black hover:text-white transition-all duration-500'>Login</button>
+              </Link>
             </div>
 
             <div className="md:hidden">

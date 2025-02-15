@@ -5,7 +5,7 @@ import Sections from "./components/Sections";
 export default function Home() {
   return (
     <>
-      <div className="container w-[90%] mx-auto">
+      <div className="">
         <Navbar />
         <Sections />
       </div>
