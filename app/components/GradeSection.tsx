@@ -11,7 +11,7 @@ const Sections: NextPage<Props> = ({ }) => {
                     <div className="gradeImg"></div>
                 </div>
                 <div className="lg:flex-grow md:w-1/2 lg:pr-2 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center GradeSec">
-                    <h1 className="title-font sm:text-3xl lg:text-4xl text-2xl mb-4 font-medium text-[#003C46]">
+                    <h1 className="title-font sm:text-3xl lg:text-4xl text-2xl mb-4 font-medium text-emerald-600">
                         Deliver and Grade Your Assessments Anywhere
                     </h1>
                     <p className="mb-8 leading-relaxed mt-2">
@@ -20,7 +20,7 @@ const Sections: NextPage<Props> = ({ }) => {
                         students are doing.
                     </p>
                     <div className="flex justify-center">
-                        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+                        <button className="inline-flex transition duration-300 transform hover:-translate-y-1    bg-emerald-600 text-white hover:bg-emerald-8000 border-0 py-2 px-6 focus:outline-none rounded text-sm">
                             Get Started
                         </button>
                     </div>

@@ -30,7 +30,6 @@ const Topbar = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
             onClick={toggleSidebar}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
           >
-            <Menu size={20} />
           </button>
         </div>
 

@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button';
 import { BsGithub } from 'react-icons/bs';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Sucess } from '../components/Alert';
 
 const Signup = () => {
     const formik = useFormik({
@@ -38,9 +41,10 @@ const Signup = () => {
             try {
                 const response = await axios.post('/api/signup', values);
                 console.log(response);
-                
+
                 if (response.status === 200) {
                     console.log('User signed up successfully:', response.data);
+                    Sucess("User signed up successfully", "success")
                 }
             } catch (error: any) {
                 console.log(error)
@@ -49,29 +53,27 @@ const Signup = () => {
     });
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen ">
             <div className="flex min-h-[calc(100vh-64px)]">
-                <div className="hidden md:flex w-1/2 bg-teal-600 p-8 flex-col justify-between relative overflow-hidden">
+                <div className="hidden md:flex w-1/2 bg-gradient-to-r from-[#DBD34] via-[#649173] to-[#DBD5A4] p-8 flex-col justify-between relative overflow-hidden">
                     <div className="relative z-10">
-                        <h1 className="text-4xl font-bold text-white mb-6">Welcome to SmitGrade</h1>
-                        <p className="text-xl text-teal-100 max-w-md">
+                        <h1 className="text-4xl font-bold text-black mb-6">Welcome to SmitGrade</h1>
+                        <p className="text-xl text-black max-w-md">
                             Join our platform and unlock your educational potential with personalized learning experiences.
                         </p>
                     </div>
 
                     <div className="absolute top-0 left-0 w-full h-full">
-                        <div className="absolute top-20 left-20 w-40 h-40 rounded-full bg-teal-500 opacity-20"></div>
-                        <div className="absolute bottom-40 right-10 w-60 h-60 rounded-full bg-teal-400 opacity-20"></div>
-                        <div className="absolute top-1/2 left-1/4 w-80 h-80 rounded-full bg-teal-300 opacity-10"></div>
+                        <div className="absolute z-20 top-20 left-20 w-40 h-40 rounded-full bg-teal-500 opacity-10"></div>
+                        <div className="absolute z-20 right-[90px]  bottom-[-0px] w-60 h-60 rounded-full bg-teal-400 opacity-10"></div>
+                        <div className="absolute z-20 top-2/2 left-[50%] w-80 h-80 rounded-full bg-teal-300 opacity-10"></div>
                     </div>
 
-                    <div className="relative z-10">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-md mx-auto">
-                            <path fill="#D1FAE5" d="M45.7,-62.8C59.9,-50.8,72.7,-38.6,79.2,-23.1C85.7,-7.5,85.8,11.4,79.4,27.7C73,44,60.2,57.8,45.3,67.3C30.4,76.9,13.4,82.2,-3.8,86.9C-20.9,91.7,-38.2,96,-51.6,87.8C-65,79.7,-74.4,59.3,-77.6,41.2C-80.8,23.1,-77.8,7.4,-76.4,-10.2C-75.1,-27.8,-75.5,-47.4,-65.8,-60.5C-56.1,-73.7,-36.4,-80.4,-19.5,-79.2C-2.5,-78.1,10.6,-69.1,24.3,-74.1C37.9,-79,51.1,-97.9,53.9,-96.4C56.7,-94.8,49.3,-72.9,45.7,-62.8Z" transform="translate(100 100)" />
-                        </svg>
+                    <div className="relative mt-[-80px]  z-10 flex justify-center ">
+                        <Image src={"/logo-main.png"} alt='' width={430} height={500} />
                     </div>
 
-                    <div className="text-teal-200 text-sm relative z-10">
+                    <div className="text-black text-sm relative z-10">
                         &copy; {new Date().getFullYear()} SmitGrade. All rights reserved.
                     </div>
                 </div>
@@ -158,7 +160,7 @@ const Signup = () => {
 
                             <Button
                                 type="submit"
-                                className="w-full bg-emerald-400 hover:bg-emerald-500 text-black py-2"
+                                className="w-full bg-[#0B9748] hover:bg-emerald-500 text-black py-2"
                             >
                                 Sign Up
                             </Button>
@@ -191,7 +193,7 @@ const Signup = () => {
                         </div>
 
                         <p className="text-sm text-gray-600 text-center mt-8">
-                            Already have an account? <a href="#" className="text-teal-600 hover:underline">Log in here</a>
+                            Already have an account? <Link href="login" className="text-teal-600 hover:underline">Log in here</Link>
                         </p>
                     </div>
                 </div>

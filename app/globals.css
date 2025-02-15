@@ -2,6 +2,8 @@
 
 * {
   font-family: 'poppins';
+  background-color: #F2F5F6;
+
 }
 
 @tailwind base;
@@ -79,7 +81,6 @@
 
 .GradeSection {
   width: 100%;
-  background-color: #F2F5F6;
 }
 
 .GradeSection-childOne {

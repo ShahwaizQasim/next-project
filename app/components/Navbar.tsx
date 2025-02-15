@@ -21,7 +21,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <Link href="/">
                 <span className="flex items-center">
-                  <Image src="/logo.png" alt="Company Logo" width={50} height={50} className="h-12 w-auto" />
+                  <Image src="/smi-1.png" alt="Company Logo" width={170} height={60} className="" />
                 </span>
               </Link>
             </div>
